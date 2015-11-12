@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RetroSE</title>
+</head>
+<body>
+
+<h2>RetroSE - playground</h2>
+<div id="message"></div>
+<div>
+	score: 
+	<input id="score" type="text" />
+	<button onclick="play()">play</button>
+</div>
+
+<script src="./retrose.js">
+</script>
+<script>
+
+	document.getElementById("message").textContent =
+		RetroSE.available ? "Now available!" : "Not available for this browser.";
+
+	RetroSE.volume = 0.2;
+
+	var se1 = RetroSE("cdcd");
+
+	function play() {
+		var p = RetroSE(document.getElementById("score").value);
+		p();
+	}
+
+</script>
+</body>
+</html>
+
